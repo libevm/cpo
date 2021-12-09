@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@openzeppelin/contracts": "4.4.0",
+    "chai": "^4.3.4",
+    "ethers": "^5.5.2",
+    "mocha": "^9.1.3"
+  },
+  "scripts": {
+    "test": "mocha scripts/test.js"
+  }
+}
