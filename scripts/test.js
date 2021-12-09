@@ -88,8 +88,8 @@ describe("CPO", function () {
     );
 
     // Generic proxy
-    const val1 = await logic1.attach(gProxy.address).callStatic.value();
     await logic1.attach(gProxy.address).reset();
+    const val1 = await logic1.attach(gProxy.address).callStatic.value();
     const tx1 = await logic1
       .attach(gProxy.address)
       .increase()
@@ -102,6 +102,7 @@ describe("CPO", function () {
     const cpo = await Cpo.deploy(signerAddress);
     await cpo.createProxy("feet", ethers.constants.HashZero, logic2.address);
     const cpoProxy = await cpo.callStatic.implementations("feet");
+
     await logic2.attach(cpoProxy).reset();
     const val3 = await logic2.attach(cpoProxy).callStatic.value();
     const tx2 = await logic2
